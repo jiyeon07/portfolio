@@ -1,4 +1,14 @@
 @charset "UTF-8";
+/* 색상 변수 */
+/* 글자크기 변수 */
+/* 크기 관련 변수 */
+/* 여백 */
+/* 공통 스타일 */
+/* 컬러 매핑 */
+/* wrap */
+/* header */
+/* 폰트 */
+/* screen reader only */
 /* reset.css - 기본 브라우저 스타일 초기화 */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -38,7 +48,7 @@ html {
 
 body {
   font-size: 1.6rem;
-  background-color: #f0f8ff;
+  background-color: #fff;
   color: #111;
 }
 
@@ -109,11 +119,11 @@ a:active {
 }
 
 *:focus {
-  outline-color: #7bc4f7;
+  outline-color: #0036ff;
 }
 
 .is-focus {
-  outline: 2px dashed #7bc4f7;
+  outline: 2px dashed #0036ff;
   -webkit-transition: unset;
   transition: unset;
 }

@@ -1,5 +1,233 @@
-.main-section {
+@charset "UTF-8";
+/* 색상 변수 */
+/* 글자크기 변수 */
+/* 크기 관련 변수 */
+/* 여백 */
+/* 공통 스타일 */
+/* 컬러 매핑 */
+/* wrap */
+/* header */
+/* 폰트 */
+/* screen reader only */
+section.cont {
   display: block;
   min-height: 100dvh;
-  padding: 18rem 0;
+  padding: 12rem 0;
+}
+
+/* title */
+#title.cont .tit > span {
+  display: inline-block;
+  width: 100%;
+  color: #0036ff;
+}
+#title.cont .tit .tit1-2 {
+  text-shadow: -2px -2px 0 #0036ff, 2px -2px 0 #0036ff, -2px 2px 0 #0036ff, 2px 2px 0 #0036ff;
+  color: #fff;
+}
+
+/* about */
+#about.cont .flex {
+  -webkit-box-pack: justify;
+  -moz-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -moz-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+#about.cont .flex .txt-cont {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  margin-right: 25rem;
+}
+#about.cont .flex .img-cont {
+  width: 100%;
+  height: 50rem;
+  border-radius: 6px;
+  overflow: hidden;
+}
+#about.cont .flex .img-cont img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#about.cont .txt-cont > p {
+  font-size: 5rem;
+  font-weight: 500;
+  color: #111;
+  line-height: 1.5;
+}
+#about.cont .txt-cont > p > span {
+  position: relative;
+  display: inline-block;
+}
+#about.cont .txt-cont > p > span::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: #bfe2ff;
+  opacity: 0.9;
+  z-index: -1;
+}
+#about.cont .skills-cont {
+  margin-top: 7rem;
+}
+
+/* portfolio */
+#portfolio.cont .flex {
+  -webkit-box-lines: multiple;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -moz-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -moz-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: -4rem;
+  margin-bottom: -4rem;
+}
+#portfolio.cont .flex .cont_box {
+  width: calc(50% - 4rem);
+  margin-right: 4rem;
+  margin-bottom: 4rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid pink;
+}
+#portfolio.cont .flex .cont_box .txt {
+  padding: 3rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#portfolio.cont .flex .cont_box .txt .txt1 {
+  margin-top: 1rem;
+  color: #545456;
+  font-weight: 500;
+}
+
+/* work_list */
+#work_list.cont .tbody {
+  width: 100%;
+}
+#work_list.cont .tr {
+  display: grid;
+  grid-template-columns: 40% 50% 10%;
+  border-bottom: 1px solid #ddd;
+  -webkit-box-align: center;
+  -moz-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#work_list.cont .tr:hover {
+  background: #ecf7ff;
+}
+#work_list.cont .tr .td {
+  padding: 3rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#work_list.cont .tr .td .tit3 {
+  font-weight: 600;
+  color: #222;
+}
+#work_list.cont .tr .td .txt {
+  font-size: 1.7rem;
+}
+#work_list.cont .tr .td > a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #111;
+}
+
+/* email */
+#email.cont .bg_main2 {
+  padding: 13rem 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#email.cont .tit3 {
+  position: relative;
+  z-index: 1;
+}
+#email.cont .tit3 > span {
+  position: relative;
+  display: inline;
+}
+#email.cont .tit3 > span::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  padding: 0 0.4rem;
+  background: #fff;
+  z-index: -1;
+  opacity: 0.8;
+}
+#email.cont .caption1 {
+  display: inline-block;
+  font-weight: 500;
+  color: #545456;
+}
+#email.cont .email_box > p {
+  display: inline;
+  width: auto;
+  position: relative;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.5;
+  z-index: 1;
+}
+#email.cont .email_box > p::after {
+  content: "";
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  background: #fff;
+  opacity: 0.7;
+  z-index: -1;
+}
+#email.cont a {
+  display: inline-block;
+  padding: 2rem 5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 999px;
+  background: #fff;
+}
+#email.cont a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1rem;
+  background: url();
+}
+#email.cont a.is-hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1rem;
+  background: url();
 }

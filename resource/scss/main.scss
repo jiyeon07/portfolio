@@ -1,0 +1,217 @@
+@charset 'utf-8';
+@use 'mixin' as *;
+
+section {
+    &.cont {
+        display: block;
+        min-height: 100dvh;
+        padding: calc($header-height + 3rem) 0;
+    }
+}
+
+/* title */
+#title {
+    &.cont {
+         .tit {
+            > span {
+                display: inline-block;
+                width: 100%;
+                color: $color-main;
+            }
+            .tit1-2 {
+                // -webkit-text-stroke: 2px $color-main;
+                text-shadow: -2px -2px 0 $color-main, 2px -2px 0 $color-main, -2px 2px 0 $color-main, 2px 2px 0 $color-main;
+                color: #fff;
+            }
+         }
+    }
+}
+
+/* about */
+#about {
+    &.cont {
+        .flex {
+            @include justify-between;
+            @include align-center;
+            .txt-cont {
+                flex: none;
+                margin-right: 25rem;
+            }
+            .img-cont {
+                width: 100%;
+                height: 50rem;
+                border-radius: 6px;
+                overflow: hidden;
+                img {
+                    max-width: 100%;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+        .txt-cont {
+            >p {
+                @include font($s:5,$w:500,$c:#111);
+                line-height: 1.5;
+                >span {
+                    @include pos($p:relative);
+                    display: inline-block;
+                    &::after {
+                        content: '';
+                        @include pos($p:absolute,$b:-5px,$l:0);
+                        width: 100%;
+                        height: 50%;
+                        background: $color-point;
+                        opacity: 0.9;
+                        z-index: -1;
+                    }
+                }
+            }
+        }
+        .skills-cont {
+            margin-top: 7rem;
+        }
+    }
+}
+
+/* portfolio */
+#portfolio {
+    &.cont {
+        .flex {
+            @include flex-wrap;
+            @include justify-between;
+            @include align-center;
+            margin-right: -4rem;
+            margin-bottom: -4rem;
+            .cont_box {
+                width: calc(100%/2 - 4rem);
+                margin-right: 4rem;
+                margin-bottom: 4rem;
+                border-radius: 8px;
+                overflow: hidden;
+                border: 1px solid pink;
+                .txt {
+                    padding: 3rem;
+                    box-sizing: border-box;
+                    .txt1 {
+                        margin-top: 1rem;
+                        color: $color-gray;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* work_list */
+#work_list {
+    &.cont {
+        .tbody {
+            width: 100%;
+        }
+        .tr {
+            display: grid;
+            grid-template-columns: 40% 50% 10%;
+            border-bottom: 1px solid #ddd;
+            @include align-center;
+            transition: all .3s;
+            &:hover {
+                background: $color-hover;
+            }
+            .td {
+                padding: 3rem;
+                box-sizing: border-box;
+                .tit3 {
+                    font-weight: 600;
+                    color: #222;
+                }
+                .txt {
+                    font-size: 1.7rem;
+                }
+                >a {
+                    display: inline-block;
+                    width: 100%;
+                    text-align: center;
+                    @include font($s:2,$w:500,$c:#111);
+                }
+            }
+        }
+    }
+}
+
+/* email */
+#email {
+    &.cont {
+        .bg {
+            &_main2 {
+                padding: 13rem 0;
+                box-sizing: border-box;
+            }
+        }
+        .tit3 {
+            @include pos($p:relative);
+            z-index: 1;
+            >span {
+                @include pos($p:relative);
+                display: inline;
+                &::after {
+                    content: '';
+                    @include pos($p:absolute, $b:-2px, $l:0);
+                    width: 100%;
+                    height: 50%;
+                    padding: 0 0.4rem;
+                    background: $color-realwhite;
+                    z-index: -1;
+                    opacity: .8;
+                }
+            }
+        }
+        .caption1 {
+            display: inline-block;
+            font-weight: 500;
+            color: $color-gray;
+        }
+        .email_box {
+            >p {
+                display: inline;
+                width: auto;
+                @include pos($p:relative);
+                @include font($s:4,$w:700,$c:#111);
+                line-height: 1.5;
+                z-index: 1;
+                &::after {
+                    content: '';
+                    width: 100%;
+                    height: 50%;
+                    @include pos($p:absolute, $b:-10px, $l:0);
+                    background: $color-realwhite;
+                    opacity: .7;
+                    z-index: -1;
+                }
+            }
+        }
+        a {
+            display: inline-block;
+            padding: 2rem 5rem;
+            box-sizing: border-box;
+            border-radius: 999px;
+            background: $color-realwhite;
+            &::after {
+                content: '';
+                @include pos($p:absolute, $t:0, $r:0);
+                width: 1rem;
+                background: url();
+            }
+            &.is-hover {
+                &::after {
+                    content: '';
+                    @include pos($p:absolute, $t:0, $r:0);
+                    width: 1rem;
+                    background: url();
+                }
+            }
+        }
+    }
+}

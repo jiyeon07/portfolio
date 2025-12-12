@@ -1,0 +1,43 @@
+@charset 'utf-8';
+@use 'mixin' as *;
+
+body {
+    @include pos($p:relative);
+}
+
+header{
+    @include pos($p:fixed,$t:0,$l:0);
+    width: 100%;
+    height: $header-height;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(5px);
+    z-index: 3;
+}
+.header {
+    &-inner {
+        max-width: 160rem;
+        height: 100%;
+        margin: 0 auto;
+        @include d-flex;
+        @include justify-between;
+        @include align-center;
+    }
+    .gnb {
+        ul {
+            @include d-flex;
+            li {
+                padding: 0 3rem;
+                box-sizing: border-box;
+                a {
+                    @include pos($p:relative);
+                    display: inline-block;
+                    width: 100%;
+                    font-weight: 500;
+                }
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+@charset 'utf-8';
+@use 'mixin' as *;
+
+/* background-color */
+.bg{
+	&_main {background-color: $color-main;}
+	&_main2 {background-color: $color-main2;}
+	&_point {background-color: $color-point;}
+
+	&_realwhite {background-color: $color-realwhite;}
+	&_realblack {background-color: $color-realblack;}
+	&_black {background-color: $color-black;}
+
+	&_semiblack {background-color: $color-semiblack;}
+	&_gray {background-color: $color-gray;}
+	&_grayfont {background-color: $color-grayfont;}
+	&_graybg {background-color: $color-graybg;}
+	&_graybd {background-color: $color-graybd;}
+	&_lightgray {background-color: $color-lightgray;}
+
+	&_dangerbg {background-color: $color-dangerbg;}
+	&_successbg {background-color: $color-successbg;}
+	&_warningbg {background-color: $color-warningbg;}
+}
+
+/* font-color */
+.color{
+	&_main {color: $color-main;}
+	&_main2 {color: $color-main2;}
+	&_point {color: $color-point;}
+
+	&_realwhite {color: $color-realwhite;}
+	&_realblack {color: $color-realblack;}
+	&_black {color: $color-black;}
+
+	&_semiblack {color: $color-semiblack;}
+	&_gray {color: $color-gray;}
+	&_grayfont {color: $color-grayfont;}
+	&_graybg {color: $color-graybg;}
+	&_graybd {color: $color-graybd;}
+	&_lightgray {color: $color-lightgray;}
+
+	&_danger {color: $color-danger;}
+	&_success {color: $color-success;}
+	&_warning {color: $color-warning;}
+}

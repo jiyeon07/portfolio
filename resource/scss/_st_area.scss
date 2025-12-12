@@ -1,0 +1,50 @@
+@charset 'utf-8';
+@use 'mixin' as *;
+
+.hidden {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0, 0, 0, 0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+
+.pc-item {display: block;
+	@include res1024 {display: none;}
+}
+.mo-item {display: none;
+	@include res1024 {display: block;}
+}
+
+/* flex */
+.flex {@include d-flex;}
+.align-center {@include align-center;}
+.align-start {@include align-start;}
+.align-end {@include align-end;}
+.justify-between {@include justify-between;}
+.justify-center {@include justify-center;}
+.justify-start {@include justify-start;}
+.justify-end {@include justify-end;}
+.flex-column {@include flex-column;}
+.flex-wrap {@include flex-wrap;}
+
+.inline-flex {@include inline-flex;}
+
+@for $i from 1 through 60 {
+	.gap-#{$i} {
+		gap: ($i / 10) * 1rem;
+		@include res1024 {
+		gap: ($i / 10) * .8rem;
+		}
+	}
+}
+
+.ta{
+	&_l {text-align: left;}
+	&_c {text-align: center;}
+	&_r {text-align: right;}
+}

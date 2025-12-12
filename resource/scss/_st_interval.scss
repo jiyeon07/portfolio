@@ -1,0 +1,81 @@
+@charset 'utf-8';
+@use 'mixin' as *;
+
+/* === 간격 === */
+
+/* margin */
+.m{
+	&x-auto {margin: 0 auto;}
+    &r{
+        &_auto {margin-right: auto;}
+		&_10 {margin-right: 1rem;}
+        &_20 {margin-right: 2rem;}
+        &_30 {margin-right: 3rem;}
+    }
+    &l{
+        &_auto {margin-left: auto;}
+        &_4 {margin-left: .4rem;}
+        &_8 {margin-left: .8rem;}
+        &_10 {margin-left: 1rem;}
+        &_20 {margin-left: 2rem;}
+        &_30 {margin-left: 3rem;}
+    }
+    &t{
+        &_10 {margin-top: 1rem;}
+        &_20 {margin-top: 2rem;}
+        &_24 {margin-top: 2.4rem;
+			@include res1024 {margin-top: 1.6rem;}
+		}
+        &_30 {margin-top: 3rem;}
+        &_32 {margin-top: 3.2rem;
+			@include res1024 {margin-top: 1.6rem;}
+		}
+        &_40 {margin-top: 4rem;}
+        &_45 {margin-top: 4.5rem;}
+        &_48 {margin-top: 4.8rem;
+			@include res1024 {margin-top: 2.4rem;}
+		}
+        &_50 {margin-top: 5rem;}
+        &_60 {margin-top: 6rem;}
+        &_70 {margin-top: 7rem;}
+        &_80 {margin-top: 8rem;}
+    }
+    &b{
+        &_10 {margin-bottom: 1rem;}
+        &_20 {margin-bottom: 2rem;}
+        &_30 {margin-bottom: 3rem;
+			@include res1024 {margin-bottom: 1.6rem;}
+		}
+        &_40 {margin-bottom: 4rem;}
+        &_50 {margin-bottom: 5rem;}
+        &_60 {margin-bottom: 6rem;}
+        &_70 {margin-bottom: 7rem;
+			@include res1024 {margin-bottom: 4rem;}
+		}
+        &_120 {margin-bottom: 12rem;}
+    }
+}
+
+/* padding */
+.pd-all{
+    &_10 {padding: 1rem;}
+    &_20 {padding: 2rem;}
+    &_40 {padding: 4rem;
+		@include res1024 {padding: 3rem;}
+
+		&__16 {padding: 4rem;
+			@include res1024 {padding: 1.6rem;}
+		}
+	}
+	&_90 {padding: 9rem;
+		@include res1024 {padding: 6rem;}
+	}
+}
+.pd-x{
+    &_20 {padding-left: 2rem; padding-right: 2rem;}
+    &_50 {padding-left: 5rem; padding-right: 5rem;}
+}
+.pd-y{
+    &_6 {padding-top: 0.6rem; padding-bottom: 0.6rem;}
+    &_12 {padding-top: 1.2rem; padding-bottom: 1.2rem;}
+}

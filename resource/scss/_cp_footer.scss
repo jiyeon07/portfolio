@@ -1,0 +1,14 @@
+@charset 'utf-8';
+@use 'mixin' as *;
+
+footer{padding: 5rem 0; background-color: #222;}
+.footer{
+	.inner{
+
+	}
+	
+}
+
+.copyright{ color: #a2a2a4; @include text-style(depth2, 500, 1.5);
+	@include res1024{ font-size: 1.2rem; font-weight: 400; text-align: center;}
+}

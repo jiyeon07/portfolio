@@ -1,0 +1,134 @@
+@charset "UTF-8";
+/* 색상 변수 */
+/* 글자크기 변수 */
+/* 크기 관련 변수 */
+/* 여백 */
+/* 공통 스타일 */
+/* 컬러 매핑 */
+/* wrap */
+/* header */
+/* 폰트 */
+/* screen reader only */
+#wrap {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.inner {
+  max-width: 160rem;
+  margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 160rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+}
+
+/* header */
+/* 색상 변수 */
+/* 글자크기 변수 */
+/* 크기 관련 변수 */
+/* 여백 */
+/* 공통 스타일 */
+/* 컬러 매핑 */
+/* wrap */
+/* header */
+/* 폰트 */
+/* screen reader only */
+body {
+  position: relative;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 9rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 3;
+}
+
+.header-inner {
+  max-width: 160rem;
+  height: 100%;
+  margin: 0 auto;
+  -ms-display: flexbox; /* Over IE10 */
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -moz-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.header .gnb ul {
+  -ms-display: flexbox; /* Over IE10 */
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox; /* TWEENER - IE 10 */ /* NEW - Chrome */
+  display: flex;
+}
+.header .gnb ul li {
+  padding: 0 3rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.header .gnb ul li a {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  font-weight: 500;
+}
+.header .gnb ul li:last-child {
+  padding-right: 0;
+}
+
+/* footer */
+/* 색상 변수 */
+/* 글자크기 변수 */
+/* 크기 관련 변수 */
+/* 여백 */
+/* 공통 스타일 */
+/* 컬러 매핑 */
+/* wrap */
+/* header */
+/* 폰트 */
+/* screen reader only */
+footer {
+  padding: 5rem 0;
+  background-color: #222;
+}
+
+.copyright {
+  color: #a2a2a4;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.025rem;
+}
+@media (max-width: 1024px) {
+  .copyright {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 1024px) {
+  .copyright {
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+  }
+}
