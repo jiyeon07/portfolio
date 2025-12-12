@@ -29,17 +29,19 @@
 	<header class="header">
 		<div class="header-inner">
 			<h1 class="logo"><a class="tit2" href="./" title="메인으로 이동">LEE JIYEON PORTFOLIO</a></h1>
-
+			<button type="button" class="mo-item btn-menu">
+				<img src="./resource/img/common/icon/icon-menu.png" alt="메뉴">
+			</button>
 			<nav class="gnb">
 				<ul>
 					<li>
-						<a class="tit4" href="javascript:scrollAnkerTo('about')" title="ABOUT ME 섹션으로 이동">ABOUT ME</a>
+						<a class="tit4" href="javascript:scrollAnkerTo('about')" title="ABOUT 섹션으로 이동">ABOUT</a>
 					</li>
 					<li>
 						<a class="tit4" href="javascript:scrollAnkerTo('portfolio')" title="PORTFOLIO 섹션으로 이동">PORTFOLIO</a>
 					</li>
 					<li>
-						<a class="tit4" href="javascript:scrollAnkerTo('work_list')" title="WORK LIST 섹션으로 이동">WORK LIST</a>
+						<a class="tit4" href="javascript:scrollAnkerTo('work_list')" title="WORK 섹션으로 이동">WORK</a>
 					</li>
 					<li>
 						<a class="tit4" href="javascript:scrollAnkerTo('email')" title="EMAIL 섹션으로 이동">EMAIL</a>
@@ -52,11 +54,11 @@
 		<!-- title :: start -->
 		<section id="title" class="cont">
 			<div class="inner">
-				<h2 class="tit">
-					<span class="tit1 tit1-1 ta_l">JI YEON</span>
-					<span class="tit1 tit1-2 ta_c">WEBPUBLISHER</span>
-					<span class="tit1 tit1-3 ta_r">PORTFOLIO</span>
-				</h2>
+				<div class="tit">
+					<h2 class="tit1 tit1-1 ta_l">JI YEON</h2>
+					<h2 class="tit1 tit1-2 ta_c">WEBPUBLISHER</h2>
+					<h2 class="tit1 tit1-3 ta_r">PORTFOLIO</h2>
+				</div>
 			</div>
 		</section>
 		<!-- title :: end -->
@@ -71,126 +73,25 @@
 						<img src="./resource/img/main/img-me.png" alt="웹퍼블리셔 이지연 이미지">
 					</div>
 				</div>
-			</div>
-			<div class="skills-cont">
-				<div class="flex">
+				<div class="skills-cont">
 					<div class="flex">
-						<p class="tit4">Scss</p>
-						<div class="bar_box">
-							<span class="bar"></span>
+						<div class="flex">
+							<div class="skills_box" data-percentage="90">
+								<svg viewBox="0 0 36 36" class="chart">
+									<path class="chart-bg" d="M18 2.0845
+									a 15.9155 15.9155 0 0 1 0 31.831
+									a 15.9155 15.9155 0 0 1 0 -31.831" />
+									<path class="chart-inner" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831
+									a 15.9155 15.9155 0 0 1 0 -31.831" />
+								</svg>
+								<div class="skills_info">
+									<p class="tit4">Scss <br>CSS</p>
+									<p class="percentage txt1">Scss</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-				<!-- <div class="swiper swiper-skills1">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="img">
-								<img src="" alt="CSS">
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">Zeppelin</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">CSS</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">Jquery</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">WordPress</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">Visual Studio Code</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="img">
-								<img src="" alt="Photoshop">
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">Photoshop</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">SCSS</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">Javascript</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">Illustrator</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="img">
-								<img src="" alt="SCSS">
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">Figma</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">Git</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">HTML5</div>
-						</div>
-					</div>
-				</div>
-				<div class="swiper swiper-skills2">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="img">
-								<img src="" alt="CSS">
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">Zeppelin</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">CSS</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">Jquery</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">WordPress</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">Visual Studio Code</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="img">
-								<img src="" alt="Photoshop">
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">Photoshop</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">SCSS</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">Javascript</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">Illustrator</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="img">
-								<img src="" alt="SCSS">
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">Figma</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">Git</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="txt">HTML5</div>
-						</div>
-					</div>
-				</div> -->
 			</div>
 		</section>
 		<!-- about :: end -->
@@ -202,7 +103,7 @@
 					<div class="cont_box">
 						<a href="https://www.kctdi.or.kr/kctdi/index.do" target="_blank">
 							<div class="img">
-								<img src="" alt="">
+								<img src="./resource/img/main/img-main01.png" alt="한국관세무역개발원 썸네일">
 							</div>
 							<div class="txt">
 								<p class="tit3">한국관세무역개발원</p>
@@ -213,7 +114,7 @@
 					<div class="cont_box">
 						<a href="https://www.hello2culture.com/main" target="_blank">
 							<div class="img">
-								<img src="" alt="">
+								<img src="./resource/img/main/img-main02.png" alt="한국메세나협회 썸네일">
 							</div>
 							<div class="txt">
 								<p class="tit3">한국메세나협회</p>
@@ -224,7 +125,7 @@
 					<div class="cont_box">
 						<a href="https://www.overseaschf.or.kr/okchf/index.do" target="_blank">
 							<div class="img">
-								<img src="" alt="">
+								<img src="./resource/img/main/img-main03.png" alt="국외소재문화유산재단 썸네일">
 							</div>
 							<div class="txt">
 								<p class="tit3">국외소재문화유산재단</p>
@@ -235,7 +136,7 @@
 					<div class="cont_box">
 						<a href="https://www.lfsquare.com/" target="_blank">
 							<div class="img">
-								<img src="" alt="">
+								<img src="./resource/img/main/img-main04.jpg" alt="LF 스퀘어몰, 팩토리몰 썸네일">
 							</div>
 							<div class="txt">
 								<p class="tit3">LF 스퀘어몰, 팩토리몰</p>
@@ -246,7 +147,7 @@
 					<div class="cont_box">
 						<a href="https://eagonusawd.com/" target="_blank">
 							<div class="img">
-								<img src="" alt="">
+								<img src="./resource/img/main/img-main05.jpg" alt="이건창호 썸네일">
 							</div>
 							<div class="txt">
 								<p class="tit3">이건창호</p>
@@ -257,7 +158,7 @@
 					<div class="cont_box">
 						<a href="https://arte365.kr/" target="_blank">
 							<div class="img">
-								<img src="" alt="">
+								<img src="./resource/img/main/img-main06.png" alt="아르떼 365 개편 썸네일">
 							</div>
 							<div class="txt">
 								<p class="tit3">아르떼 365 개편</p>

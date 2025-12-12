@@ -14,10 +14,10 @@
 }
 
 .pc-item {display: block;
-	@include res1024 {display: none;}
+	@include res768 {display: none;}
 }
 .mo-item {display: none;
-	@include res1024 {display: block;}
+	@include res768 {display: block;}
 }
 
 /* flex */

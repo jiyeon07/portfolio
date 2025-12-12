@@ -13,13 +13,14 @@ section {
 #title {
     &.cont {
          .tit {
-            > span {
-                display: inline-block;
-                width: 100%;
+            display: flex;
+            flex-direction: column;
+            > h2 {
+                flex-grow: 1;
                 color: $color-main;
+                font-size: 10vw;
             }
             .tit1-2 {
-                // -webkit-text-stroke: 2px $color-main;
                 text-shadow: -2px -2px 0 $color-main, 2px -2px 0 $color-main, -2px 2px 0 $color-main, 2px 2px 0 $color-main;
                 color: #fff;
             }
@@ -72,27 +73,70 @@ section {
         .skills-cont {
             margin-top: 7rem;
         }
+        .skills {
+            &_box {
+                @include pos($p:relative);
+                width: 15rem;
+                .chart {
+                    display: block;
+                    &-bg {
+                        fill: none;
+                        stroke: $color-graybd;
+                        stroke-width: 4;
+                    }
+                    &-inner {
+                        fill: none;
+                        stroke-width: 4;
+                        stroke-linecap: round;
+                        stroke: $color-main;
+                        stroke-dasharray: 0, 100;
+                        transition: stroke-dasharray 1.5s ease-out;
+                        transform: rotate(-90deg);
+                        transform-origin: 50% 50%;
+                    }
+                }
+            }
+            &_info {
+                @include pos($p:absolute, $t:50%, $l:50%);
+                transform: translate(-50%, -50%);
+                >p {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
     }
 }
 
 /* portfolio */
 #portfolio {
     &.cont {
+        overflow: hidden;
         .flex {
-            @include flex-wrap;
-            @include justify-between;
-            @include align-center;
-            margin-right: -4rem;
-            margin-bottom: -4rem;
+            display: grid;
+            gap: 4rem;
+            grid-template-columns: 1fr 1fr;
             .cont_box {
-                width: calc(100%/2 - 4rem);
-                margin-right: 4rem;
-                margin-bottom: 4rem;
+                width: 100%;
                 border-radius: 8px;
                 overflow: hidden;
-                border: 1px solid pink;
+                border: 1px solid $color-graybd;
+                a {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                }
+                .img {
+                    height: 30rem;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: top;
+                    }
+                }
                 .txt {
-                    padding: 3rem;
+                    padding: 5rem 4rem;
                     box-sizing: border-box;
                     .txt1 {
                         margin-top: 1rem;
@@ -209,7 +253,163 @@ section {
                     content: '';
                     @include pos($p:absolute, $t:0, $r:0);
                     width: 1rem;
+                    // background: url();
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:1920px) {
+    #title {
+        &.cont {
+            .tit {
+                h2 {
+                    font-size: 20rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:1600px) {
+    section {
+        &.cont {
+            display: block;
+            min-height: 100vh;
+            padding: calc($header-height) 0;
+        }
+    }
+    .inner {
+        padding: 0 2rem;
+    }
+    #title {
+        &.cont {
+            .inner {
+                max-width: 140rem;
+                box-sizing: border-box;
+                padding-top: 10rem;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+
+    #about {
+        &.cont {
+            .flex {
+                flex-direction: column-reverse;
+                .img-cont {
+                    width: 50%;
+                    margin-bottom: 6rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    section {
+        &.cont {
+            display: block;
+            min-height: auto;
+            padding: calc($header-height) 0;
+        }
+    }
+    .inner {
+        padding: 0 2rem;
+    }
+    #title {
+        &.cont {
+            .inner {
+                padding: 0 2rem;
+                box-sizing: border-box;
+            }
+        }
+    }
+
+    #about {
+        &.cont {
+            .flex {
+                @include align-start;
+                .img-cont {
+                    width: 100%;
+                    height: 30rem;
+                    margin-bottom: 3rem;
+                }
+                .txt-cont {
+                    margin-right: 0;
+                    > p {
+                        font-size: 3rem;
+                    }
+                }
+            }
+            .skills-cont {
+                margin-top: 5rem;
+            }
+        }
+    }
+
+    #portfolio {
+        &.cont {
+            .flex {
+                gap: 2rem;
+                grid-template-columns: 1fr;
+                .cont_box {
+                    .img {
+                        height: 20rem;
+                    }
+                    .txt {
+                        padding: 2.5rem 2rem;
+                        box-sizing: border-box;
+                        .txt1 {
+                            margin-top: 1rem;
+                            color: $color-gray;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #email {
+        &.cont {
+            .bg {
+                &_main2 {
+                    padding: 7rem 0;
+                    box-sizing: border-box;
+                }
+            }
+            .tit3 {
+                word-break: keep-all;
+            }
+            .email_box {
+                >p {
+                    display: inline;
+                    width: auto;
+                    @include pos($p:relative);
+                    @include font($s:3,$w:700,$c:#111);
+                    line-height: 1.5;
+                    z-index: 1;
+                }
+            }
+            a {
+                display: inline-block;
+                padding: 1rem 3rem;
+                &::after {
+                    content: '';
+                    @include pos($p:absolute, $t:0, $r:0);
+                    width: 1rem;
                     background: url();
+                }
+                &.is-hover {
+                    &::after {
+                        content: '';
+                        @include pos($p:absolute, $t:0, $r:0);
+                        width: 1rem;
+                        // background: url();
+                    }
                 }
             }
         }

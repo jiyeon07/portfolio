@@ -11,3 +11,35 @@
 
 /* footer */
 @import 'cp_footer';
+
+/* 반응형 */
+@media (min-width: 320px) and (max-width: 1024px) {
+  html, body {
+    font-size: 48.0769230769%;
+  }
+}
+@media (min-width: 360px) and (max-width: 1024px) {
+  html, body {
+    font-size: 62.5%;
+  }
+}
+@media (min-width: 480px) and (max-width: 1024px) {
+  body, html {
+    font-size: 81.25%;
+  }
+}
+@media (min-width: 720px) and (max-width: 1024px) {
+  body, html {
+    font-size: 62.5%;
+  }
+}
+// @media (min-width: 1025px) and (max-width: 1200px) {
+//   body, html {
+//     font-size: 44.6428571429%;
+//   }
+// }
+@media (min-width: 1200px) and (max-width: 1400px) {
+  body, html {
+    font-size: 52.0833333333%;
+  }
+}

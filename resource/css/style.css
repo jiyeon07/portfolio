@@ -215,7 +215,7 @@
 }
 @media (max-width: 1024px) {
   .tit4 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 }
 .tit5 {
@@ -226,7 +226,7 @@
 }
 @media (max-width: 1024px) {
   .tit5 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -978,7 +978,7 @@
 .pc-item {
   display: block;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .pc-item {
     display: none;
   }
@@ -987,7 +987,7 @@
 .mo-item {
   display: none;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .mo-item {
     display: block;
   }

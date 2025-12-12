@@ -41,3 +41,40 @@ header{
         }
     }
 }
+
+/* 반응형 */
+@media (max-width:1600px) {
+    .header {
+        &-inner {
+            max-width: unset;
+            padding: 0 2rem;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .header {
+        .gnb {
+            display: none;
+            width: 80%;
+            height: 100vh;
+            background: $color-realwhite;
+            box-shadow: -5px 0px 10px 0px #6c6c6c54;
+            ul {
+                height: 100%;
+                flex-direction: column;
+                li {
+                    flex: 1;
+                    padding: 2rem 0;
+                }
+            }
+        }
+        .btn-menu {
+            width: 2.1rem;
+            background: transparent;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
