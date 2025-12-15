@@ -6,7 +6,6 @@
 /* 공통 스타일 */
 /* 컬러 매핑 */
 /* wrap */
-/* header */
 /* 폰트 */
 /* screen reader only */
 #wrap {
@@ -41,7 +40,6 @@
 /* 공통 스타일 */
 /* 컬러 매핑 */
 /* wrap */
-/* header */
 /* 폰트 */
 /* screen reader only */
 body {
@@ -105,13 +103,30 @@ header {
   }
 }
 @media (max-width: 768px) {
+  header {
+    height: 7rem;
+  }
   .header .gnb {
+    position: fixed;
+    top: 0;
+    right: 0;
     display: none;
-    width: 80%;
+    width: 50%;
     height: 100vh;
     background: #fff;
     -webkit-box-shadow: -5px 0px 10px 0px rgba(108, 108, 108, 0.3294117647);
             box-shadow: -5px 0px 10px 0px rgba(108, 108, 108, 0.3294117647);
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  }
+  .header .gnb.is-active {
+    display: inline-block;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   .header .gnb ul {
     height: 100%;
@@ -119,18 +134,29 @@ header {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin-top: 5rem;
   }
   .header .gnb ul li {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    padding: 2rem 0;
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+    padding: 2rem 3rem;
   }
   .header .btn-menu {
     width: 2.1rem;
     background: transparent;
   }
   .header .btn-menu img {
+    width: 100%;
+  }
+  .header .btn-close {
+    position: absolute;
+    top: 2rem;
+    right: 1.2rem;
+    width: 3rem;
+    background: transparent;
+  }
+  .header .btn-close img {
     width: 100%;
   }
 }
@@ -142,7 +168,6 @@ header {
 /* 공통 스타일 */
 /* 컬러 매핑 */
 /* wrap */
-/* header */
 /* 폰트 */
 /* screen reader only */
 footer {

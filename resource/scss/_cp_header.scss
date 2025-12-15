@@ -8,7 +8,7 @@ body {
 header{
     @include pos($p:fixed,$t:0,$l:0);
     width: 100%;
-    height: $header-height;
+    height: 9rem;
     background: rgba(255,255,255,0.8);
     backdrop-filter: blur(5px);
     z-index: 3;
@@ -53,27 +53,48 @@ header{
 }
 
 @media (max-width:768px) {
+    header{
+        height: 7rem;
+    }
     .header {
         .gnb {
+            @include pos($p:fixed, $t:0, $r:0);
             display: none;
-            width: 80%;
+            width: 50%;
             height: 100vh;
             background: $color-realwhite;
             box-shadow: -5px 0px 10px 0px #6c6c6c54;
+            transform: translateX(100%);
+            transition: transform .3s ease-in-out;
+            &.is-active {
+                display: inline-block;
+                transform: translateX(0);
+            }
             ul {
                 height: 100%;
                 flex-direction: column;
+                margin-top: 5rem;
                 li {
-                    flex: 1;
-                    padding: 2rem 0;
+                    flex: none;
+                    padding: 2rem 3rem;
                 }
             }
         }
-        .btn-menu {
-            width: 2.1rem;
-            background: transparent;
-            img {
-                width: 100%;
+        .btn {
+            &-menu {
+                width: 2.1rem;
+                background: transparent;
+                img {
+                    width: 100%;
+                }
+            }
+            &-close {
+                @include pos($p:absolute,$t:2rem,$r:1.2rem);
+                width: 3rem;
+                background: transparent;
+                img {
+                    width: 100%;
+                }
             }
         }
     }

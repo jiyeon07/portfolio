@@ -33,6 +33,9 @@
 				<img src="./resource/img/common/icon/icon-menu.png" alt="메뉴">
 			</button>
 			<nav class="gnb">
+				<button type="button" class="mo-item btn-close">
+					<img src="./resource/img/common/icon/icon-close.png" alt="닫기">
+				</button>
 				<ul>
 					<li>
 						<a class="tit4" href="javascript:scrollAnkerTo('about')" title="ABOUT 섹션으로 이동">ABOUT</a>
@@ -55,9 +58,9 @@
 		<section id="title" class="cont">
 			<div class="inner">
 				<div class="tit">
-					<h2 class="tit1 tit1-1 ta_l">JI YEON</h2>
-					<h2 class="tit1 tit1-2 ta_c">WEBPUBLISHER</h2>
-					<h2 class="tit1 tit1-3 ta_r">PORTFOLIO</h2>
+					<h2 class="tit1 tit1-1 ta_l form-left">JI YEON</h2>
+					<h2 class="tit1 tit1-2 ta_c form-in">WEBPUBLISHER</h2>
+					<h2 class="tit1 tit1-3 ta_r form-right">PORTFOLIO</h2>
 				</div>
 			</div>
 		</section>
@@ -67,26 +70,67 @@
 			<div class="inner">
 				<div class="flex">
 					<div class="txt-cont">
-						<p>미래를 향해 <br><span class="f_bold">한 발짝</span> 더 나아가고 싶은 <br>저는 <span class="line_blue">웹퍼블리셔</span> <br><span class="f_bold">이지연</span> 입니다.</p>
+						<p>미래를 향해 <br><span class="f_bold highlight highlight01">한 발짝</span> 더 나아가고 싶은 <br>저는 <span class="line_blue highlight highlight02">웹퍼블리셔</span> <br><span class="f_bold highlight highlight03">이지연</span> 입니다.</p>
 					</div>
 					<div class="img-cont">
 						<img src="./resource/img/main/img-me.png" alt="웹퍼블리셔 이지연 이미지">
 					</div>
 				</div>
 				<div class="skills-cont">
+					<h3 class="tit2 mb_30">Skills</h3>
 					<div class="flex">
-						<div class="flex">
-							<div class="skills_box" data-percentage="90">
-								<svg viewBox="0 0 36 36" class="chart">
-									<path class="chart-bg" d="M18 2.0845
-									a 15.9155 15.9155 0 0 1 0 31.831
-									a 15.9155 15.9155 0 0 1 0 -31.831" />
-									<path class="chart-inner" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831
-									a 15.9155 15.9155 0 0 1 0 -31.831" />
+						<div class="skills_box" data-percentage="90">
+							<div class="skills_chart">
+								<svg class="chart" viewBox="0 0 200 200">
+									<circle class="stroke stroke_90" cx="100" cy="100" r="90" />
 								</svg>
 								<div class="skills_info">
-									<p class="tit4">Scss <br>CSS</p>
-									<p class="percentage txt1">Scss</p>
+									<p class="tit">HTML</p>
+									<p class="percentage">90%</p>
+								</div>
+							</div>
+						</div>
+						<div class="skills_box" data-percentage="90">
+							<div class="skills_chart">
+								<svg class="chart" viewBox="0 0 200 200">
+									<circle class="stroke stroke_90" cx="100" cy="100" r="90" />
+								</svg>
+								<div class="skills_info">
+									<p class="tit">Scss &amp; CSS</p>
+									<p class="percentage">90%</p>
+								</div>
+							</div>
+						</div>
+						<div class="skills_box" data-percentage="80">
+							<div class="skills_chart">
+								<svg class="chart" viewBox="0 0 200 200">
+									<circle class="stroke stroke_80" cx="100" cy="100" r="90" />
+								</svg>
+								<div class="skills_info">
+									<p class="tit">Javascript &amp; jQuery</p>
+									<p class="percentage">80%</p>
+								</div>
+							</div>
+						</div>
+						<div class="skills_box" data-percentage="80">
+							<div class="skills_chart">
+								<svg class="chart" viewBox="0 0 200 200">
+									<circle class="stroke stroke_80" cx="100" cy="100" r="90" />
+								</svg>
+								<div class="skills_info">
+									<p class="tit">Photoshop &amp; Figma</p>
+									<p class="percentage">80%</p>
+								</div>
+							</div>
+						</div>
+						<div class="skills_box" data-percentage="80">
+							<div class="skills_chart">
+								<svg class="chart" viewBox="0 0 200 200">
+									<circle class="stroke stroke_80" cx="100" cy="100" r="90" />
+								</svg>
+								<div class="skills_info">
+									<p class="tit">Github</p>
+									<p class="percentage">80%</p>
 								</div>
 							</div>
 						</div>
@@ -176,80 +220,80 @@
 				<h3 class="tit2 mb_30">작업 목록</h3>
 				<div class="table">
 					<div class="tbody">
-						<div class="tr">
+						<div class="tr fill-box">
 							<div class="td">
 								<p class="tit3">SaaS 전환지원센터</p>
 							</div>
 							<div class="td">
 								<p class="txt">메인, 서브 퍼블리싱 작업</p>
 							</div>
-							<div class="td">
-								<a href="http://m16.co.kr/SaaS/index.html" target="_blank">
+							<div class="td td-btn">
+								<a class="btn btn-go" href="http://m16.co.kr/SaaS/index.html" target="_blank">
 									바로가기
 								</a>
 							</div>
 						</div>
-						<div class="tr">
+						<div class="tr fill-box">
 							<div class="td">
 								<p class="tit3">KIPoT 과학치안진흥센터</p>
 							</div>
 							<div class="td">
 								<p class="txt">메인, 서브 퍼블리싱 작업</p>
 							</div>
-							<div class="td">
-								<a href="https://kipot.or.kr/user/inno/main/main.do" target="_blank">
+							<div class="td td-btn">
+								<a class="btn btn-go" href="https://kipot.or.kr/user/inno/main/main.do" target="_blank">
 									바로가기
 								</a>
 							</div>
 						</div>
-						<div class="tr">
+						<div class="tr fill-box">
 							<div class="td">
 								<p class="tit3">KIST 미래융합전략센터</p>
 							</div>
 							<div class="td">
 								<p class="txt">메인, 서브 퍼블리싱 작업</p>
 							</div>
-							<div class="td">
-								<a href="https://www.kist.re.kr/fcsc/index.do" target="_blank">
+							<div class="td td-btn">
+								<a class="btn btn-go" href="https://www.kist.re.kr/fcsc/index.do" target="_blank">
 									바로가기
 								</a>
 							</div>
 						</div>
-						<div class="tr">
+						<div class="tr fill-box">
 							<div class="td">
 								<p class="tit3">건강보험 빅데이터 플랫폼</p>
 							</div>
 							<div class="td">
 								<p class="txt">서브 퍼블리싱 작업</p>
 							</div>
-							<div class="td">
-								<a href="https://nhiss.nhis.or.kr/" target="_blank">
+							<div class="td td-btn">
+								<a class="btn btn-go" href="https://nhiss.nhis.or.kr/" target="_blank">
 									바로가기
 								</a>
 							</div>
 						</div>
-						<div class="tr">
+						<div class="tr fill-box">
 							<div class="td">
 								<p class="tit3">국가녹색기술연구소</p>
 							</div>
 							<div class="td">
 								<p class="txt">퍼블리싱, 개편, 운영, 웹접근성 작업</p>
 							</div>
-							<div class="td">
-								<a href="https://nigt.re.kr/gtck/index.do" target="_blank">
+							<div class="td td-btn">
+								<a class="btn btn-go" href="https://nigt.re.kr/gtck/index.do" target="_blank">
 									바로가기
 								</a>
 							</div>
 						</div>
-						<div class="tr">
+						<div class="tr fill-box">
 							<div class="td">
 								<p class="tit3">인천공항특송웹</p>
 							</div>
 							<div class="td">
 								<p class="txt">퍼블리싱, 반응형 작업</p>
 							</div>
-							<div class="td">
-								<a href="https://kctdi-ct.nisus.kr/html_ct/index.jsp" target="_blank">
+							<div class="td td-btn">
+								<a class="btn btn-go" href="https://kctdi-ct.nisus.kr/html_ct/index.jsp" target="_blank">
 									바로가기
 								</a>
 							</div>
@@ -263,10 +307,10 @@
 		<section id="email" class="cont">
 			<div class="bg_main2">
 				<div class="inner">
-					<p class="tit3">포트폴리오 관련 문의는 <span>이메일</span>로 연락 주시면 빠르게 회신드리겠습니다:)</p>
+					<p class="tit3">포트폴리오 관련 문의는 <span class="highlight">이메일</span>로 연락 주시면 빠르게 회신드리겠습니다:)</p>
 					<span class="caption1 mt_10">이메일을 클릭하면 복사됩니다!</span>
 					<div class="email_box mt_30">
-						<p>leeji0613@naver.com</p>
+						<p id="email_copy">leeji0613@naver.com</p>
 					</div>
 					<a class="btn btn_l mt_50" href="mailto:leeji0613@naver.com">
 						이메일 보내기

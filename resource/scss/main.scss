@@ -5,7 +5,7 @@ section {
     &.cont {
         display: block;
         min-height: 100dvh;
-        padding: calc($header-height + 3rem) 0;
+        padding: calc(9rem + 3rem) 0;
     }
 }
 
@@ -20,11 +20,30 @@ section {
                 color: $color-main;
                 font-size: 10vw;
             }
+            &1 {
+                opacity: 0;
+                transition: opacity 1s ease-out, transform 1s ease-out;
+                will-change: opacity, transform;
+                    &.is-visible {
+                        opacity: 1;
+                        transform: none;
+                    &.form-left {
+                        transform: translateX(10rem);
+                    }
+                    &.form-right {
+                        transform: translateX(-10rem);
+                    }
+                    &.form-in {
+                        transform: none;
+                        transition: opacity 2s;
+                    }
+                }
+            }
             .tit1-2 {
                 text-shadow: -2px -2px 0 $color-main, 2px -2px 0 $color-main, -2px 2px 0 $color-main, 2px 2px 0 $color-main;
                 color: #fff;
             }
-         }
+        }
     }
 }
 
@@ -58,47 +77,95 @@ section {
                 >span {
                     @include pos($p:relative);
                     display: inline-block;
+                    &.highlight {
+                        --highlight: 0%;
+                        &02 {
+                            &::after {
+                                transition-delay: 1s;
+                            }
+                        }
+                        &03 {
+                            &::after {
+                                transition-delay: 1.5s;
+                            }
+                        }
+                    }
                     &::after {
                         content: '';
                         @include pos($p:absolute,$b:-5px,$l:0);
-                        width: 100%;
+                        width: var(--highlight);
                         height: 50%;
                         background: $color-point;
                         opacity: 0.9;
                         z-index: -1;
+                        transition: width .8s ease-out;
                     }
                 }
             }
         }
         .skills-cont {
-            margin-top: 7rem;
+            margin-top: 10rem;
+            >.flex {
+                flex-wrap: wrap;
+                @include justify-between;
+                @include align-center;
+                flex-direction: row;
+                margin-bottom: -2rem;
+            }
         }
         .skills {
+            &_chart {
+                    @include pos($p:relative);
+                    max-width: 20rem;
+                    width: 100%;
+                    margin: 0 auto;
+                }
             &_box {
-                @include pos($p:relative);
-                width: 15rem;
+                flex: none;
+                display: inline-block;
+                margin-right: 2rem;
+                margin-bottom: 2rem;
+                &:last-child {
+                    margin-right: 0;
+                }
                 .chart {
+                    @include pos($p:relative);
                     display: block;
-                    &-bg {
-                        fill: none;
-                        stroke: $color-graybd;
-                        stroke-width: 4;
-                    }
-                    &-inner {
-                        fill: none;
-                        stroke-width: 4;
-                        stroke-linecap: round;
+                    width: 100%;
+                    height: auto;
+                    // width: 200px;
+                    // height: 200px;
+                    .stroke {
+                        fill: transparent;
                         stroke: $color-main;
-                        stroke-dasharray: 0, 100;
-                        transition: stroke-dasharray 1.5s ease-out;
-                        transform: rotate(-90deg);
-                        transform-origin: 50% 50%;
+                        stroke-width: 20;
+                        transform: rotate(-90deg) rotateX(-180deg);
+                        transform-origin: center;
+                        &_100 {
+                            stroke-dasharray: 600;
+                        }
+                        &_90 {
+                            stroke-dasharray: 500;
+                        }
+                        &_80 {
+                            stroke-dasharray: 450;
+                        }
+                        &_70 {
+                            stroke-dasharray: 400;
+                        }
                     }
                 }
             }
             &_info {
                 @include pos($p:absolute, $t:50%, $l:50%);
                 transform: translate(-50%, -50%);
+                .tit {
+                    @include font($s:2,$w:600,$c:#111);
+                }
+                .percentage {
+                    margin-top: 1rem;
+                    @include font($s:1.8,$w:500,$c:#111);
+                }
                 >p {
                     width: 100%;
                     text-align: center;
@@ -121,12 +188,19 @@ section {
                 border-radius: 8px;
                 overflow: hidden;
                 border: 1px solid $color-graybd;
+                transition: all .3s;
+                &:hover {
+                    transform: translateY(-1.5rem);
+                    border: 1px solid $color-graybg;
+                }
                 a {
                     display: inline-block;
                     width: 100%;
                     height: 100%;
                 }
                 .img {
+                    @include pos($p:relative);
+                    z-index: 2;
                     height: 30rem;
                     img {
                         width: 100%;
@@ -136,8 +210,11 @@ section {
                     }
                 }
                 .txt {
+                    @include pos($p:relative);
+                    z-index: 2;
                     padding: 5rem 4rem;
                     box-sizing: border-box;
+                    background: transparent;
                     .txt1 {
                         margin-top: 1rem;
                         color: $color-gray;
@@ -156,15 +233,42 @@ section {
             width: 100%;
         }
         .tr {
+            @include pos($p:relative);
             display: grid;
-            grid-template-columns: 40% 50% 10%;
+            grid-template-columns: 40% 40% 20%;
             border-bottom: 1px solid #ddd;
             @include align-center;
             transition: all .3s;
-            &:hover {
-                background: $color-hover;
-            }
+                &:hover {
+                    background: $color-realwhite;
+                }
+                &.fill-box {
+                    @include pos($p:relative);
+                    overflow: hidden;
+                    transition: all ease;
+                    &:hover {
+                        &::after {
+                            width: 100vw;
+                            height: 100vw;
+                            transition: width .5s ease-in .1s, height .5s ease-in .1s;
+                        }
+                    }
+                }
+                &::after {
+                    content: '';
+                    @include pos($p:absolute);
+                    display: block;
+                    z-index: 1;
+                    width: 0;
+                    height: 0;
+                    border-radius: 50%;
+                    background: $color-realwhite;
+                    transition: width .5s ease-out, height .5s ease-out;
+                    background-color: $color-main2;
+                }
             .td {
+                @include pos($p:relative);
+                z-index: 2;
                 padding: 3rem;
                 box-sizing: border-box;
                 .tit3 {
@@ -188,6 +292,8 @@ section {
 /* email */
 #email {
     &.cont {
+        min-height: auto;
+        padding-bottom: 0;
         .bg {
             &_main2 {
                 padding: 13rem 0;
@@ -200,14 +306,19 @@ section {
             >span {
                 @include pos($p:relative);
                 display: inline;
+                &.highlight {
+                    --highlight: 0%;
+                }
                 &::after {
                     content: '';
                     @include pos($p:absolute, $b:-2px, $l:0);
-                    width: 100%;
+                    width: var(--highlight);
                     height: 50%;
+                    opacity: 0.9;
+                    z-index: -1;
+                    transition: width .8s ease-out;
                     padding: 0 0.4rem;
                     background: $color-realwhite;
-                    z-index: -1;
                     opacity: .8;
                 }
             }
@@ -225,6 +336,7 @@ section {
                 @include font($s:4,$w:700,$c:#111);
                 line-height: 1.5;
                 z-index: 1;
+                cursor: pointer;
                 &::after {
                     content: '';
                     width: 100%;
@@ -236,25 +348,46 @@ section {
                 }
             }
         }
-        a {
+        .btn {
+            @include pos($p:relative);
             display: inline-block;
-            padding: 2rem 5rem;
+            padding: 2rem 7rem 2rem 3rem;
             box-sizing: border-box;
             border-radius: 999px;
             background: $color-realwhite;
             &::after {
                 content: '';
-                @include pos($p:absolute, $t:0, $r:0);
-                width: 1rem;
-                background: url();
+                @include pos($p:absolute, $t:50%, $r:3.5rem);
+                transform: translateY(-50%);
+                width: 2rem;
+                height: 1rem;
+                background: url(../img/main/icon/icon-arrow.png) no-repeat center center;
+                background-size: 100% 100%;
+                transition: transform .3s ease, opacity .3s ease;
             }
             &.is-hover {
                 &::after {
-                    content: '';
-                    @include pos($p:absolute, $t:0, $r:0);
-                    width: 1rem;
-                    // background: url();
+                    transform: translate(1rem, -50%);
                 }
+            }
+        }
+        .toast-message {
+            @include pos($p:absolute);
+            background-color: #333;
+            color: $color-realwhite;
+            padding: 2rem;
+            box-sizing: border-box;
+            border-radius: 2px;
+            font-size: 1.4rem;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .3s ease, transform .3s ease;
+            pointer-events: none;
+            &.show {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(-5px);
             }
         }
     }
@@ -272,25 +405,28 @@ section {
     }
 }
 
+@media (max-width:1700px) {
+    .inner {
+        padding: 0 2rem;
+    }
+}
+
 @media (max-width:1600px) {
     section {
         &.cont {
             display: block;
             min-height: 100vh;
-            padding: calc($header-height) 0;
+            padding: calc(9rem) 0;
         }
-    }
-    .inner {
-        padding: 0 2rem;
     }
     #title {
         &.cont {
             .inner {
-                max-width: 140rem;
+                max-width: unset;
                 box-sizing: border-box;
                 padding-top: 10rem;
-                padding-left: 0;
-                padding-right: 0;
+                padding-left: 7rem;
+                padding-right: 7rem;
             }
         }
     }
@@ -300,8 +436,41 @@ section {
             .flex {
                 flex-direction: column-reverse;
                 .img-cont {
-                    width: 50%;
+                    width: 70%;
                     margin-bottom: 6rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:1200px) {
+    #about {
+        &.cont {
+            .skills {
+                &-cont {
+                    > .flex {
+                        @include justify-center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:1024px) {
+    section {
+        &.cont {
+            display: block;
+            min-height: auto;
+            padding: calc(9rem) 0;
+        }
+    }
+    #work_list {
+        &.cont {
+            .tr {
+                &:hover {
+                    background: transparent;
                 }
             }
         }
@@ -313,16 +482,17 @@ section {
         &.cont {
             display: block;
             min-height: auto;
-            padding: calc($header-height) 0;
+            padding: 5rem 0;
         }
     }
     .inner {
-        padding: 0 2rem;
+        padding: 0 1.2rem;
     }
     #title {
         &.cont {
+            padding-top: 10rem;
             .inner {
-                padding: 0 2rem;
+                padding: 0 1.2rem;
                 box-sizing: border-box;
             }
         }
@@ -344,8 +514,17 @@ section {
                     }
                 }
             }
-            .skills-cont {
-                margin-top: 5rem;
+            .skills {
+                &-cont {
+                    margin-top: 5rem;
+                }
+                &_box {
+                    width: calc(100% / 2);
+                    margin-right: 0;
+                }
+                &_chart {
+                    max-width: 15rem;
+                }
             }
         }
     }
@@ -373,8 +552,37 @@ section {
         }
     }
 
+    #work_list {
+        &.cont {
+            .tr {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 2rem 0;
+                box-sizing: border-box;
+                .td {
+                    flex: none;
+                    width: 100%;
+                    padding: 1rem;
+                    .btn-go {
+                        display: inline-block;
+                        background: $color-main2;
+                        color: #282828;
+                        padding: 1.5rem;
+                        font-size: 1.6rem;
+                    }
+                    &.td-btn {
+                        margin-top: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
     #email {
         &.cont {
+            .inner {
+                padding: 0 2.4rem;
+            }
             .bg {
                 &_main2 {
                     padding: 7rem 0;
@@ -394,21 +602,17 @@ section {
                     z-index: 1;
                 }
             }
-            a {
+            .btn {
                 display: inline-block;
-                padding: 1rem 3rem;
+                padding: 1rem 5rem 1rem 2rem;
                 &::after {
-                    content: '';
-                    @include pos($p:absolute, $t:0, $r:0);
-                    width: 1rem;
-                    background: url();
+                    right: 2rem;
                 }
                 &.is-hover {
                     &::after {
                         content: '';
-                        @include pos($p:absolute, $t:0, $r:0);
-                        width: 1rem;
-                        // background: url();
+                        transform: none;
+                        transform: translateY(-50%);
                     }
                 }
             }

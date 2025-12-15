@@ -41,3 +41,36 @@ function scrollAnkerTo(id) {
 	const x = document.getElementById(id);
 	x.scrollIntoView({ behavior: "smooth", block: "start" });
 }
+
+// 모바일 gnb
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. 필요한 DOM 요소 선택
+    const menuButton = document.querySelector('.btn-menu');
+    const gnbMenu = document.querySelector('.gnb');
+
+    // 2. 버튼 클릭 이벤트 리스너 추가
+    menuButton.addEventListener('click', () => {
+        // gnbMenu 요소에 'is-active' 클래스를 토글 (있으면 제거, 없으면 추가)
+        gnbMenu.classList.toggle('is-active');
+
+        // 메뉴가 열렸을 때 버튼 이미지 변경 또는 접근성을 위한 'aria-expanded' 속성 토글
+        const isMenuOpen = gnbMenu.classList.contains('is-active');
+        menuButton.setAttribute('aria-expanded', isMenuOpen);
+
+        // 메뉴가 열렸을 때 본문 스크롤 방지
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+
+    // 메뉴 항목 클릭 시 메뉴 닫기 기능
+    const gnbLinks = document.querySelectorAll('.gnb a');
+    gnbLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            gnbMenu.classList.remove('is-active');
+            document.body.style.overflow = ''; // 스크롤 해제
+        });
+    });
+});
