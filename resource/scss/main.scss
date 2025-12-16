@@ -86,7 +86,7 @@ section {
                         }
                         &03 {
                             &::after {
-                                transition-delay: 1.5s;
+                                transition-delay: 1.3s;
                             }
                         }
                     }
@@ -133,26 +133,15 @@ section {
                     display: block;
                     width: 100%;
                     height: auto;
-                    // width: 200px;
-                    // height: 200px;
                     .stroke {
                         fill: transparent;
                         stroke: $color-main;
                         stroke-width: 20;
-                        transform: rotate(-90deg) rotateX(-180deg);
-                        transform-origin: center;
-                        &_100 {
-                            stroke-dasharray: 600;
-                        }
-                        &_90 {
-                            stroke-dasharray: 500;
-                        }
-                        &_80 {
-                            stroke-dasharray: 450;
-                        }
-                        &_70 {
-                            stroke-dasharray: 400;
-                        }
+                        stroke-dasharray: 565.48;
+                        stroke-dashoffset: 565.48;
+                        transition: stroke-dashoffset 2s ease-in-out;
+                        transform: rotate(-90deg);
+                        transform-origin: 50% 50%;
                     }
                 }
             }
@@ -191,7 +180,8 @@ section {
                 transition: all .3s;
                 &:hover {
                     transform: translateY(-1.5rem);
-                    border: 1px solid $color-graybg;
+                    border: 1px solid transparent;
+                    box-shadow: 0px 1px 10px #ddd;
                 }
                 a {
                     display: inline-block;
@@ -277,10 +267,13 @@ section {
                 }
                 .txt {
                     font-size: 1.7rem;
+                    line-height: 1.6;
+                    word-break: keep-all;
                 }
                 >a {
                     display: inline-block;
                     width: 100%;
+                    padding: 0;
                     text-align: center;
                     @include font($s:2,$w:500,$c:#111);
                 }
@@ -559,6 +552,25 @@ section {
                 flex-wrap: wrap;
                 padding: 2rem 0;
                 box-sizing: border-box;
+
+                &:hover {
+                    background: $color-realwhite;
+                }
+                &.fill-box {
+                    @include pos($p:relative);
+                    overflow: hidden;
+                    transition: all ease;
+                    &:hover {
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
+
+
+
+
+                
                 .td {
                     flex: none;
                     width: 100%;

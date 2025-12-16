@@ -111,8 +111,8 @@ section.cont {
           transition-delay: 1s;
 }
 #about.cont .txt-cont > p > span.highlight03::after {
-  -webkit-transition-delay: 1.5s;
-          transition-delay: 1.5s;
+  -webkit-transition-delay: 1.3s;
+          transition-delay: 1.3s;
 }
 #about.cont .txt-cont > p > span::after {
   content: "";
@@ -174,22 +174,14 @@ section.cont {
   fill: transparent;
   stroke: #0036ff;
   stroke-width: 20;
-  -webkit-transform: rotate(-90deg) rotateX(-180deg);
-          transform: rotate(-90deg) rotateX(-180deg);
-  -webkit-transform-origin: center;
-          transform-origin: center;
-}
-#about.cont .skills_box .chart .stroke_100 {
-  stroke-dasharray: 600;
-}
-#about.cont .skills_box .chart .stroke_90 {
-  stroke-dasharray: 500;
-}
-#about.cont .skills_box .chart .stroke_80 {
-  stroke-dasharray: 450;
-}
-#about.cont .skills_box .chart .stroke_70 {
-  stroke-dasharray: 400;
+  stroke-dasharray: 565.48;
+  stroke-dashoffset: 565.48;
+  -webkit-transition: stroke-dashoffset 2s ease-in-out;
+  transition: stroke-dashoffset 2s ease-in-out;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
 }
 #about.cont .skills_info {
   position: absolute;
@@ -234,7 +226,9 @@ section.cont {
 #portfolio.cont .flex .cont_box:hover {
   -webkit-transform: translateY(-1.5rem);
           transform: translateY(-1.5rem);
-  border: 1px solid #979797;
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0px 1px 10px #ddd;
+          box-shadow: 0px 1px 10px #ddd;
 }
 #portfolio.cont .flex .cont_box a {
   display: inline-block;
@@ -325,10 +319,13 @@ section.cont {
 }
 #work_list.cont .tr .td .txt {
   font-size: 1.7rem;
+  line-height: 1.6;
+  word-break: keep-all;
 }
 #work_list.cont .tr .td > a {
   display: inline-block;
   width: 100%;
+  padding: 0;
   text-align: center;
   font-size: 2rem;
   font-weight: 500;
@@ -575,6 +572,18 @@ section.cont {
     padding: 2rem 0;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+  }
+  #work_list.cont .tr:hover {
+    background: #fff;
+  }
+  #work_list.cont .tr.fill-box {
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: all ease;
+    transition: all ease;
+  }
+  #work_list.cont .tr.fill-box:hover::after {
+    display: none;
   }
   #work_list.cont .tr .td {
     -webkit-box-flex: 0;

@@ -1,4 +1,5 @@
-// 스크롤시 메인 타이틀
+
+/* 스크롤시 메인 타이틀 */
 document.addEventListener("DOMContentLoaded", function() {
     // 1. 애니메이션을 적용할 모든 요소를 선택합니다.
     const animElements = document.querySelectorAll('.tit1');
@@ -35,7 +36,61 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-// 스크롤 애니메이션
+/* 스크롤 원형 차트 */
+document.addEventListener('DOMContentLoaded', () => {
+    const skillBoxes = document.querySelectorAll('.skills_box');
+    const radius = 90;
+    // 반지름 90에 대한 원의 둘레: 2 * Math.PI * 90 ≈ 565.48
+    const circumference = 2 * Math.PI * radius; 
+
+    // Intersection Observer 옵션 설정
+    // threshold: 0.5는 요소가 뷰포트에 50% 이상 보일 때/나갈 때 모두 감지합니다.
+    const options = {
+        root: null, // 뷰포트를 기준으로 관찰합니다.
+        rootMargin: '0px',
+        threshold: 0.5 
+    };
+    // 관찰자 콜백 함수
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            const skillBox = entry.target;
+            const percentage = parseInt(skillBox.dataset.percentage, 10);
+            const strokeElement = skillBox.querySelector('.stroke');
+            
+            if (!strokeElement) return; // .stroke 요소가 없으면 건너뜁니다.
+
+            // 목표 stroke-dashoffset 값을 미리 계산합니다.
+            // (100 - 비율)% 만큼 둘레에서 뺌 = 채워져야 할 부분
+            const targetOffset = circumference * (100 - percentage) / 100;
+            
+            // --- 
+
+            // 1. 요소가 뷰포트에 들어올 때 (스크롤 다운)
+            if (entry.isIntersecting) {
+                // .active 클래스 추가 및 애니메이션 실행 (차트 채우기)
+                skillBox.classList.add('active');
+                strokeElement.style.strokeDashoffset = targetOffset;
+
+            // 2. 요소가 뷰포트에서 나갈 때 (스크롤 업 또는 다운)
+            } else {
+                // .active 클래스 제거 및 애니메이션 초기화 (차트 비우기)
+                skillBox.classList.remove('active');
+                // 초기 상태인 둘레 값으로 되돌려 선을 완전히 숨깁니다.
+                strokeElement.style.strokeDashoffset = circumference;
+            }
+        });
+    };
+    // Intersection Observer 인스턴스 생성
+    const observer = new IntersectionObserver(observerCallback, options);
+
+    // 모든 .skills_box 요소를 관찰 대상으로 등록합니다.
+    skillBoxes.forEach(box => {
+        observer.observe(box);
+    });
+});
+
+
+/* 스크롤 애니메이션 */
 document.addEventListener('DOMContentLoaded', () => {
   const highlights = document.querySelectorAll('.highlight');
 
@@ -72,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// 마우스 호버 물방울 효과
+/* 마우스 호버 물방울 효과 */
 $(document).ready(function () {
 	$('.fill-box').on('mouseenter', function (e) {
 		const $this = $(this);
@@ -85,7 +140,7 @@ $(document).ready(function () {
 });
 
 
-// email 복사하기
+/* email 복사하기 */
 document.addEventListener('DOMContentLoaded', () => {
     const emailElement = document.getElementById('email_copy');
 
