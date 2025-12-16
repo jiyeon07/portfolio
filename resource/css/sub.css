@@ -1,0 +1,271 @@
+@charset "UTF-8";
+/* 색상 변수 */
+/* 글자크기 변수 */
+/* 크기 관련 변수 */
+/* 여백 */
+/* 공통 스타일 */
+/* 컬러 매핑 */
+/* wrap */
+/* 폰트 */
+/* screen reader only */
+.container.sub {
+  padding: 10rem 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container.sub .inner {
+  max-width: 160rem;
+  margin: 0 auto;
+}
+.container.sub .flex-txt {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 15rem;
+     -moz-column-gap: 15rem;
+          column-gap: 15rem;
+  -webkit-box-align: center;
+  -moz-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.container.sub .txt-cont {
+  margin-top: 7rem;
+  margin-bottom: 7rem;
+}
+.container.sub .txt-cont .top_txt {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+}
+.container.sub .txt-cont .sub-tit {
+  margin-bottom: 4rem;
+  font-size: 6rem;
+  font-weight: 600;
+  color: #111;
+}
+.container.sub .txt-cont .flex {
+  margin-bottom: 2rem;
+}
+.container.sub .txt-cont .flex :last-child {
+  margin-bottom: 0;
+}
+.container.sub .txt-cont span.left {
+  display: inline-block;
+  width: 10rem;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+}
+.container.sub .txt-cont .txt {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #111;
+  line-height: 1.5;
+}
+.container.sub .txt-cont .btn-go {
+  width: 30rem;
+  margin-top: 1rem;
+  padding: 2rem 3rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #d8e7ff;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #111;
+  line-height: 1.5;
+}
+.container.sub .right_img {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+}
+.container.sub .view-cont .txt-wrap {
+  -webkit-box-align: end;
+  -moz-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: justify;
+  -moz-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.container.sub .view-cont .txt-wrap .caption1 {
+  position: relative;
+  margin-left: 2rem;
+  padding: 0 0.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: 500;
+}
+.container.sub .view-cont .txt-wrap .caption1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: #bfe2ff;
+  z-index: -1;
+}
+.container.sub .view-cont .bg {
+  margin-top: 2rem;
+  padding: 5rem 0 7rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #f3f3f3;
+  border-radius: 12px;
+}
+.container.sub .view-cont .tab-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.container.sub .view-cont .tab-list > li + li {
+  margin-left: 1rem;
+}
+.container.sub .view-cont .tab-list > li button {
+  display: inline-block;
+  padding: 2rem 3rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #979797;
+  background: #fff;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.container.sub .view-cont .tab-list > li button:hover {
+  background: #d8e7ff;
+  border: 1px solid #d8e7ff;
+}
+.container.sub .view-cont .tab-cont {
+  display: none;
+  width: 100%;
+  margin-top: 5rem;
+}
+.container.sub .view-cont .tab-cont.on {
+  display: inline-block;
+}
+.container.sub .view-cont .tab-cont .img-pc {
+  width: 100rem;
+  height: 50rem;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+.container.sub .view-cont .tab-cont .img-pc img {
+  width: 100%;
+  max-width: 100%;
+}
+.container.sub .view-cont .tab-cont .img-mo {
+  width: 36rem;
+  height: 50rem;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+.container.sub .view-cont .tab-cont .img-mo img {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 1700px) {
+  .inner {
+    padding: 0 2rem;
+  }
+}
+@media (max-width: 1200px) {
+  .container.sub .flex-txt {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .container.sub .top_txt {
+    margin-top: 7rem;
+  }
+  .container.sub .txt-cont .btn-go {
+    width: 100%;
+  }
+  .container.sub .view-cont .bg {
+    padding: 5rem 2rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .container.sub .view-cont .tab-cont {
+    width: 100%;
+  }
+  .container.sub .view-cont .tab-cont .img-pc {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .inner {
+    padding: 0 1.2rem;
+  }
+  .container.sub .txt-cont .sub-tit {
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+  }
+  .container.sub .txt-cont span.left {
+    width: 5rem;
+    margin-right: 2rem;
+  }
+  .container.sub .txt-cont .txt {
+    font-size: 1.4rem;
+    word-break: keep-all;
+  }
+  .container.sub .txt-cont .btn-go {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+  }
+  .container.sub .right_img {
+    width: 100%;
+  }
+  .container.sub .right_img img {
+    width: 100%;
+  }
+  .container.sub .view-cont .bg {
+    padding: 2rem;
+  }
+  .container.sub .view-cont .tab-list > li button {
+    width: 10rem;
+    padding: 1rem;
+  }
+  .container.sub .view-cont .tab-list > li button:hover {
+    border: 1px solid #979797;
+    background: #fff;
+  }
+  .container.sub .view-cont .txt-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+    -moz-box-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: start;
+    -moz-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  .container.sub .view-cont .txt-wrap .caption1 {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .container.sub .view-cont .tab-cont .img-mo {
+    width: 100%;
+    height: 40rem;
+  }
+}

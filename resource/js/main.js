@@ -1,3 +1,4 @@
+'use strict';
 
 /* 스크롤시 메인 타이틀 */
 document.addEventListener("DOMContentLoaded", function() {

@@ -12,6 +12,7 @@ section {
 /* title */
 #title {
     &.cont {
+        overflow: hidden;
          .tit {
             display: flex;
             flex-direction: column;

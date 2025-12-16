@@ -15,6 +15,9 @@ section.cont {
 }
 
 /* title */
+#title.cont {
+  overflow: hidden;
+}
 #title.cont .tit {
   display: -webkit-box;
   display: -ms-flexbox;
