@@ -484,7 +484,7 @@ section {
         &.cont {
             display: block;
             min-height: auto;
-            padding: 5rem 0;
+            padding: 7rem 0 5rem;
         }
     }
     .inner {
@@ -494,7 +494,6 @@ section {
         &.cont {
             padding-top: 10rem;
             .inner {
-                // padding: 0 1.2rem;
                 padding: 0;
                 box-sizing: border-box;
             }

@@ -60,6 +60,9 @@ header{
         height: 7rem;
     }
     .header {
+        &-inner {
+            padding: 0 1.2rem;
+        }
         .gnb {
             @include pos($p:fixed, $t:0, $r:0);
             display: none;

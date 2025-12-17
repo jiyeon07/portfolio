@@ -110,6 +110,9 @@ header.sub {
   header {
     height: 7rem;
   }
+  .header-inner {
+    padding: 0 1.2rem;
+  }
   .header .gnb {
     position: fixed;
     top: 0;
