@@ -140,8 +140,13 @@
   background: #fff;
   border-radius: 999px;
   overflow: hidden;
+  font-weight: 500;
 }
 .container.sub .view-cont .tab-list > li button:hover {
+  background: #d8e7ff;
+  border: 1px solid #d8e7ff;
+}
+.container.sub .view-cont .tab-list > li.on button {
   background: #d8e7ff;
   border: 1px solid #d8e7ff;
 }

@@ -104,7 +104,14 @@
                             background: $color-realwhite;
                             border-radius: 999px;
                             overflow: hidden;
+                            font-weight: 500;
                             &:hover {
+                                background: $color-main2;
+                                border: 1px solid $color-main2;
+                            }
+                        }
+                        &.on {
+                            button {
                                 background: $color-main2;
                                 border: 1px solid $color-main2;
                             }
