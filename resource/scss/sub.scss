@@ -64,7 +64,7 @@
             .txt-wrap {
                 @include align-end;
                 @include justify-between;
-                .caption1 {
+                .txt1 {
                     @include pos($p:relative);
                     margin-left: 2rem;
                     padding: 0 .5rem;
@@ -198,6 +198,7 @@
     .container {
         &.sub {
             .txt-cont {
+                margin-top: 3rem;
                 .sub-tit {
                     margin-bottom: 3rem;
                     font-size: 2.5rem;
@@ -227,6 +228,9 @@
                     }
                 }
             }
+            .top_txt {
+                margin-top: 5rem;
+            }
             .view-cont {
                 .bg {
                     padding: 2rem;
@@ -249,7 +253,7 @@
                     flex-direction: column;
                     @include justify-start;
                     @include align-start;
-                    .caption1 {
+                    .txt1 {
                         margin-left: 0;
                         margin-top: .5rem;
                     }

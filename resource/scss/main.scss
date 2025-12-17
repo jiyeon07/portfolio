@@ -392,7 +392,7 @@ section {
         &.cont {
             .tit {
                 h2 {
-                    font-size: 20rem;
+                    font-size: 18rem;
                 }
             }
         }
@@ -439,6 +439,14 @@ section {
 }
 
 @media (max-width:1200px) {
+    #title {
+        &.cont {
+            .inner {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
     #about {
         &.cont {
             .skills {
@@ -486,12 +494,36 @@ section {
         &.cont {
             padding-top: 10rem;
             .inner {
-                padding: 0 1.2rem;
+                // padding: 0 1.2rem;
+                padding: 0;
                 box-sizing: border-box;
+            }
+            .tit {
+                > h2 {
+                    font-size: 12vw;
+                }
+                &1 {
+                    opacity: 0;
+                    transition: opacity 1s ease-out, transform 1s ease-out;
+                    will-change: opacity, transform;
+                        &.is-visible {
+                            opacity: 1;
+                            transform: none;
+                        &.form-left {
+                            transform: translateX(2rem);
+                        }
+                        &.form-right {
+                            transform: translateX(-2rem);
+                        }
+                        &.form-in {
+                            transform: none;
+                            transition: opacity 2s;
+                        }
+                    }
+                }
             }
         }
     }
-
     #about {
         &.cont {
             .flex {
@@ -522,7 +554,6 @@ section {
             }
         }
     }
-
     #portfolio {
         &.cont {
             .flex {
@@ -540,6 +571,11 @@ section {
                             color: $color-gray;
                             font-weight: 500;
                         }
+                    }
+                    &:hover {
+                        transform: translateY(0);
+                        border: 1px solid $color-graybd;
+                        box-shadow: none;
                     }
                 }
             }
@@ -566,12 +602,7 @@ section {
                             display: none;
                         }
                     }
-                }
-
-
-
-
-                
+                }                
                 .td {
                     flex: none;
                     width: 100%;

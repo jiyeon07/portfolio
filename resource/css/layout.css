@@ -56,6 +56,10 @@ header {
   backdrop-filter: blur(5px);
   z-index: 3;
 }
+header.sub {
+  -webkit-box-shadow: 0 0 7px #ddd;
+          box-shadow: 0 0 7px #ddd;
+}
 
 .header-inner {
   max-width: 160rem;
