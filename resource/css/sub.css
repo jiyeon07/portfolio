@@ -76,6 +76,7 @@
   font-weight: 400;
   color: #111;
   line-height: 1.5;
+  word-break: keep-all;
 }
 .container.sub .txt-cont .btn-go {
   width: 30rem;
@@ -172,6 +173,17 @@
 }
 .container.sub .view-cont .tab-cont.on {
   display: inline-block;
+}
+.container.sub .view-cont .tab-cont .img-tab::-webkit-scrollbar {
+  width: 0.8rem;
+}
+.container.sub .view-cont .tab-cont .img-tab::-webkit-scrollbar-thumb {
+  background: #d8e7ff;
+  border-radius: 10px;
+}
+.container.sub .view-cont .tab-cont .img-tab::-webkit-scrollbar-track {
+  background: #fcfcfc;
+  border-radius: 10px;
 }
 .container.sub .view-cont .tab-cont .img-pc {
   width: 100rem;
@@ -286,6 +298,10 @@
   .container.sub .view-cont .tab-list > li button:hover {
     border: 1px solid #979797;
     background: #fff;
+  }
+  .container.sub .view-cont .tab-list > li.on button:hover {
+    background: #d8e7ff;
+    border: 1px solid #d8e7ff;
   }
   .container.sub .view-cont .txt-wrap {
     -webkit-box-orient: vertical;

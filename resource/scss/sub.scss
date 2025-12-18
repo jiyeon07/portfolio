@@ -59,6 +59,7 @@
             .txt {
                 @include font($s:1.8,$w:400,$c:#111);
                 line-height: 1.5;
+                word-break: keep-all;
             }
             .btn {
                 &-go {
@@ -141,6 +142,19 @@
                         display: inline-block;
                     }
                     .img {
+                        &-tab {
+                            &::-webkit-scrollbar {
+                                width: .8rem;
+                            }
+                            &::-webkit-scrollbar-thumb {
+                                background: $color-main2;
+                                border-radius: 10px;
+                            }
+                            &::-webkit-scrollbar-track {
+                                background: #fcfcfc;
+                                border-radius: 10px;
+                            }
+                        }
                         &-pc {
                             width: 100rem;
                             height: 50rem;
@@ -279,6 +293,14 @@
                                 &:hover {
                                     border: 1px solid $color-graybg;
                                     background: $color-realwhite;
+                                }
+                            }
+                            &.on {
+                                button {
+                                    &:hover {
+                                        background: $color-main2;
+                                        border: 1px solid $color-main2;
+                                    }
                                 }
                             }
                         }
