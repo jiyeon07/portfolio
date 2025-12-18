@@ -207,6 +207,9 @@
                             width: 100%;
                         }
                     }
+                    .sub-tit {
+                        font-size: 4.5rem;
+                    }
                 }
             }
             .view-cont {
@@ -223,6 +226,18 @@
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:1024px) {
+    .container {
+        &.sub {
+            .txt-cont {
+                .tit5 {
+                    font-size: 1.8rem;
                 }
             }
         }
@@ -258,6 +273,9 @@
                         margin-right: 2rem;
                     }
                 }
+                .tit5 {
+                    font-size: 1.4rem;
+                }
                 .txt {
                     font-size: 1.4rem;
                     word-break: keep-all;
@@ -271,7 +289,7 @@
             }
             .right {
                 &_img {
-                    width: 100%;
+                    width: 80%;
                     img {
                         width: 100%;
                     }
