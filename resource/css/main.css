@@ -71,6 +71,12 @@ section.cont {
 }
 
 /* about */
+#about.cont .inner > .flex {
+  -webkit-box-align: center;
+  -moz-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
 #about.cont .flex {
   -webkit-box-pack: justify;
   -moz-justify-content: space-between;
@@ -158,7 +164,7 @@ section.cont {
   font-size: 2rem;
   font-weight: 500;
   color: #111;
-  line-height: 1.5;
+  line-height: 1.6;
   word-break: keep-all;
   z-index: 1;
 }
@@ -179,7 +185,7 @@ section.cont {
   font-size: 2rem;
   font-weight: 500;
   color: #111;
-  line-height: 1.5;
+  line-height: 1.6;
   word-break: keep-all;
 }
 #about.cont .skills-cont {

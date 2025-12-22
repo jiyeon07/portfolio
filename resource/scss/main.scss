@@ -55,6 +55,11 @@ section {
 /* about */
 #about {
     &.cont {
+        .inner {
+            >.flex {
+                @include align-center;
+            }
+        }
         .flex {
             @include justify-between;
             @include align-start;
@@ -129,7 +134,7 @@ section {
                     width: auto;
                     margin-right: 3rem;
                     @include font(2,500,#111);
-                    line-height: 1.5;
+                    line-height: 1.6;
                     word-break: keep-all;
                     z-index: 1;
                     &::after {
@@ -144,7 +149,7 @@ section {
                 .txt {
                     flex: 1;
                     @include font(2,500,#111);
-                    line-height: 1.5;
+                    line-height: 1.6;
                     word-break: keep-all;
                 }
             }
