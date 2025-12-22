@@ -589,6 +589,12 @@ section.cont {
     -ms-flex-pack: center;
     justify-content: center;
   }
+  #work_list.cont .tr .td {
+    padding: 2rem;
+  }
+  #work_list.cont .tr .td > a::after {
+    right: 1.5rem;
+  }
 }
 @media (max-width: 1024px) {
   section.cont {
