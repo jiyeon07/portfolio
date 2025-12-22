@@ -156,7 +156,7 @@ $(document).ready(function() {
     };
 
     // 이메일 클릭 이벤트 바인딩
-    $('#email_copy').on('click', async function() {
+    $('.email_copy').on('click', async function() {
         const textToCopy = $(this).text(); // 요소의 텍스트 가져오기
         let copySuccess = false;
 

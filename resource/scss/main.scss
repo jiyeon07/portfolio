@@ -13,6 +13,9 @@ section {
 #title {
     &.cont {
         overflow: hidden;
+        .inner {
+            margin-top: 4rem;
+        }
          .tit {
             display: flex;
             flex-direction: column;
@@ -20,6 +23,7 @@ section {
                 flex-grow: 1;
                 color: $color-main;
                 font-size: 10vw;
+                line-height: 1.2;
             }
             &1 {
                 opacity: 0;
@@ -53,14 +57,17 @@ section {
     &.cont {
         .flex {
             @include justify-between;
-            @include align-center;
+            @include align-start;
+            .cont-about {
+                width: calc(100%/2 - 20rem);
+            }
             .txt-cont {
                 flex: none;
-                margin-right: 25rem;
+                margin-right: 20rem;
             }
             .img-cont {
                 width: 100%;
-                height: 50rem;
+                height: 60rem;
                 border-radius: 6px;
                 overflow: hidden;
                 img {
@@ -72,40 +79,78 @@ section {
             }
         }
         .txt-cont {
-            >p {
-                @include font($s:5,$w:500,$c:#111);
-                line-height: 1.5;
-                >span {
-                    @include pos($p:relative);
-                    display: inline-block;
-                    &.highlight {
-                        --highlight: 0%;
-                        &02 {
-                            &::after {
-                                transition-delay: 1s;
+            .intro-txt {
+                >p {
+                    @include font($s:5,$w:500,$c:#111);
+                    line-height: 1.5;
+                    >span {
+                        @include pos($p:relative);
+                        display: inline-block;
+                        &.highlight {
+                            --highlight: 0%;
+                            &02 {
+                                &::after {
+                                    transition-delay: 1s;
+                                }
+                            }
+                            &03 {
+                                &::after {
+                                    transition-delay: 1.3s;
+                                }
                             }
                         }
-                        &03 {
-                            &::after {
-                                transition-delay: 1.3s;
-                            }
+                        &::after {
+                            content: '';
+                            @include pos($p:absolute,$b:-5px,$l:0);
+                            width: var(--highlight);
+                            height: 50%;
+                            background: $color-point;
+                            opacity: 0.9;
+                            z-index: -1;
+                            transition: width .8s ease-out;
                         }
                     }
+                }
+            }
+            .info-txt {
+                margin-top: 5rem;
+                padding: 3rem;
+                box-sizing: border-box;
+                background: $color-graybd;
+                border-radius: 12px;
+                .flex {
+                    +.flex {
+                        margin-top: 1rem;
+                    }
+                }
+                .tit {
+                    @include pos($p:relative);
+                    flex: none;
+                    width: auto;
+                    margin-right: 3rem;
+                    @include font(2,500,#111);
+                    line-height: 1.5;
+                    word-break: keep-all;
+                    z-index: 1;
                     &::after {
                         content: '';
-                        @include pos($p:absolute,$b:-5px,$l:0);
-                        width: var(--highlight);
+                        @include pos($p:absolute,$b:0,$l:0);
+                        width: 100%;
                         height: 50%;
-                        background: $color-point;
-                        opacity: 0.9;
+                        background: $color-realwhite;
                         z-index: -1;
-                        transition: width .8s ease-out;
                     }
+                }
+                .txt {
+                    flex: 1;
+                    @include font(2,500,#111);
+                    line-height: 1.5;
+                    word-break: keep-all;
                 }
             }
         }
         .skills-cont {
-            margin-top: 10rem;
+            margin-top: 15rem;
             >.flex {
                 flex-wrap: wrap;
                 @include justify-between;
@@ -181,7 +226,7 @@ section {
                 transition: all .3s;
                 &:hover {
                     transform: translateY(-1.5rem);
-                    border: 1px solid transparent;
+                    border: 1px solid #cde4f6;
                     box-shadow: 0px 1px 10px #ddd;
                 }
                 a {
@@ -220,6 +265,12 @@ section {
 /* work_list */
 #work_list {
     &.cont {
+        background: #000;
+        h3 {
+            &.tit2 {
+                color: $color-realwhite;
+            }
+        }
         .tbody {
             width: 100%;
         }
@@ -230,9 +281,6 @@ section {
             border-bottom: 1px solid #ddd;
             @include align-center;
             transition: all .3s;
-                &:hover {
-                    background: $color-realwhite;
-                }
                 &.fill-box {
                     @include pos($p:relative);
                     overflow: hidden;
@@ -241,7 +289,17 @@ section {
                         &::after {
                             width: 100vw;
                             height: 100vw;
-                            transition: width .5s ease-in .1s, height .5s ease-in .1s;
+                            transition: width .3s ease-in .1s, height .3s ease-in .1s;
+                        }
+                        p {
+                            color: #111;
+                        }
+                        a {
+                            color: #111;
+                            &::after {
+                                background-image: url(../img/main/icon/icon-arrow.png);
+                                transform: translate(1rem, -50%);
+                            }
                         }
                     }
                 }
@@ -252,8 +310,8 @@ section {
                     z-index: 1;
                     width: 0;
                     height: 0;
-                    background: $color-realwhite;
-                    transition: width .5s ease-out, height .5s ease-out;
+                    background: #000;
+                    transition: width .3s ease-out, height .3s ease-out;
                     background-color: $color-main2;
                 }
             .td {
@@ -261,9 +319,12 @@ section {
                 z-index: 2;
                 padding: 3rem;
                 box-sizing: border-box;
+                p {
+                    color: $color-realwhite;
+                }
                 .tit3 {
                     font-weight: 600;
-                    color: #222;
+                    color: $color-realwhite;
                 }
                 .txt {
                     font-size: 1.7rem;
@@ -271,11 +332,22 @@ section {
                     word-break: keep-all;
                 }
                 >a {
+                    @include pos($p:relative);
                     display: inline-block;
                     width: 100%;
                     padding: 0;
                     text-align: center;
-                    @include font($s:2,$w:500,$c:#111);
+                    @include font($s:2,$w:500,$c:$color-realwhite);
+                    &::after {
+                        content: '';
+                        @include pos($p:absolute, $t:50%, $r:3.5rem);
+                        transform: translateY(-50%);
+                        width: 2rem;
+                        height: 1rem;
+                        background: url(../img/main/icon/icon-arrow_w.png) no-repeat center center;
+                        background-size: 100% 100%;
+                        transition: transform .3s ease, opacity .3s ease;
+                    }
                 }
             }
         }
@@ -286,16 +358,11 @@ section {
 #email {
     &.cont {
         min-height: auto;
-        padding-bottom: 0;
-        .bg {
-            &_main2 {
-                padding: 13rem 0;
-                box-sizing: border-box;
-            }
-        }
-        .tit3 {
+        .tit4 {
             @include pos($p:relative);
             z-index: 1;
+            font-weight: 600;
+            word-break: keep-all;
             >span {
                 @include pos($p:relative);
                 display: inline;
@@ -311,43 +378,37 @@ section {
                     z-index: -1;
                     transition: width .8s ease-out;
                     padding: 0 0.4rem;
-                    background: $color-realwhite;
+                    background: $color-main2;
                     opacity: .8;
                 }
             }
         }
         .caption1 {
             display: inline-block;
+            width: 100%;
             font-weight: 500;
             color: $color-gray;
         }
         .email_box {
             >p {
-                display: inline;
+                display: inline-block;
                 width: auto;
-                @include pos($p:relative);
-                @include font($s:4,$w:700,$c:#111);
+                @include pos($p:relative, $l:50%);
+                transform: translateX(-50%);
+                @include font($s:8,$w:700,$c:#111);
                 line-height: 1.5;
                 z-index: 1;
                 cursor: pointer;
-                &::after {
-                    content: '';
-                    width: 100%;
-                    height: 50%;
-                    @include pos($p:absolute, $b:-10px, $l:0);
-                    background: $color-realwhite;
-                    opacity: .7;
-                    z-index: -1;
-                }
             }
         }
         .btn {
-            @include pos($p:relative);
+            @include pos($p:relative,$l:50%);
+            transform: translateX(-50%);
             display: inline-block;
             padding: 2rem 7rem 2rem 3rem;
             box-sizing: border-box;
             border-radius: 999px;
-            background: $color-realwhite;
+            background: $color-main2;
             &::after {
                 content: '';
                 @include pos($p:absolute, $t:50%, $r:3.5rem);
@@ -423,18 +484,6 @@ section {
             }
         }
     }
-
-    #about {
-        &.cont {
-            .flex {
-                flex-direction: column-reverse;
-                .img-cont {
-                    width: 70%;
-                    margin-bottom: 6rem;
-                }
-            }
-        }
-    }
 }
 
 @media (max-width:1200px) {
@@ -448,6 +497,22 @@ section {
     }
     #about {
         &.cont {
+            .inner {
+                >.flex {
+                    flex-direction: column-reverse;
+                    @include align-center;
+                }
+            }
+            .flex {
+                .txt-cont {
+                    width: 100%;
+                    margin-right: 0;
+                    margin-top: 5rem;
+                }
+                .img-cont {
+                    width: 70%;
+                }
+            }
             .skills {
                 &-cont {
                     > .flex {
@@ -464,14 +529,57 @@ section {
         &.cont {
             display: block;
             min-height: auto;
-            padding: calc(9rem) 0;
+            padding: 9rem 0;
+        }
+    }
+    #portfolio {
+        &.cont {
+            .flex {
+                .cont_box {
+                    &:hover {
+                        border: 1px solid $color-graybd;
+                        box-shadow: none;
+                        transform: translateY(0);
+                    }
+                }
+            }
         }
     }
     #work_list {
         &.cont {
             .tr {
+                &.fill-box {
+                    &:hover {
+                        p {
+                            color: $color-realwhite;
+                        }
+                        a {
+                            color: #111;
+                        }
+                    }
+                    a {
+                        &::after {
+                            display: none;
+                        }
+                        &:hover {
+                            color: #111;
+                        }
+                    }
+                }
                 &:hover {
                     background: transparent;
+                }
+                &::after {
+                    background-color: #000;
+                }
+            }
+        }
+    }
+    #email {
+        &.cont {
+            .email_box  {
+                > p {
+                    font-size: 7rem;
                 }
             }
         }
@@ -533,8 +641,30 @@ section {
                 }
                 .txt-cont {
                     margin-right: 0;
-                    > p {
-                        font-size: 3rem;
+                    .intro-txt {
+                        > p {
+                            font-size: 3rem;
+                        }
+                    }
+                    .info-txt {
+                        margin-top: 5rem;
+                        padding: 3rem;
+                        box-sizing: border-box;
+                        background: $color-graybd;
+                        border-radius: 12px;
+                        .flex {
+                            flex-direction: column;
+                        }
+                        .tit {
+                            width: auto;
+                            @include font(1.7,500,#111);
+                            line-height: 1.5;
+                        }
+                        .txt {
+                            margin-top: 1rem;
+                            @include font(1.7,500,#111);
+                            line-height: 1.5;
+                        }
                     }
                 }
             }
@@ -589,13 +719,16 @@ section {
                 box-sizing: border-box;
 
                 &:hover {
-                    background: $color-realwhite;
+                    background: #000;
                 }
                 &.fill-box {
                     @include pos($p:relative);
                     overflow: hidden;
                     transition: all ease;
                     &:hover {
+                        p {
+                            color: $color-realwhite;
+                        }
                         &::after {
                             display: none;
                         }
@@ -639,10 +772,9 @@ section {
             }
             .email_box {
                 >p {
-                    display: inline;
-                    width: auto;
+                    display: inline-block;
                     @include pos($p:relative);
-                    @include font($s:3,$w:700,$c:#111);
+                    @include font($s:3.3,$w:700,$c:#111);
                     line-height: 1.5;
                     z-index: 1;
                 }
